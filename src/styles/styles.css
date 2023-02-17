@@ -7,11 +7,16 @@ body{
     margin: 0;
 }
 
+.app{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 140px 1fr 80px;
+}
+
 .header{
     display: flex;
     justify-content: center;
     background-color: #8980F5;
-    height: 140px;
     padding-bottom: 20px;
 }
 
@@ -26,3 +31,25 @@ h1{
     font-size: 38px;
 }
 
+.cv-container{
+    background-color: #21897E;
+    padding: 40px;
+}
+
+.footer{
+    background-color: #69D1C5;
+    font-family: "Merriweather", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.github{
+    height: 20px;
+}
+
+.cv{
+    background-color: rgba(255, 255, 255, 0.699);
+    height: 100%;
+}
