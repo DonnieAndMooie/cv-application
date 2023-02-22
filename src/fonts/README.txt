@@ -1,30 +1,27 @@
-Merriweather Sans Variable Font
-===============================
+Inter Variable Font
+===================
 
-This download contains Merriweather Sans as both variable fonts and static fonts.
+This download contains Inter as both a variable font and static fonts.
 
-Merriweather Sans is a variable font with this axis:
+Inter is a variable font with these axes:
+  slnt
   wght
 
-This means all the styles are contained in these files:
-  MerriweatherSans-VariableFont_wght.ttf
-  MerriweatherSans-Italic-VariableFont_wght.ttf
+This means all the styles are contained in a single file:
+  Inter-VariableFont_slnt,wght.ttf
 
 If your app fully supports variable fonts, you can now pick intermediate styles
 that aren’t available as static fonts. Not all apps support variable fonts, and
-in those cases you can use the static font files for Merriweather Sans:
-  static/MerriweatherSans-Light.ttf
-  static/MerriweatherSans-Regular.ttf
-  static/MerriweatherSans-Medium.ttf
-  static/MerriweatherSans-SemiBold.ttf
-  static/MerriweatherSans-Bold.ttf
-  static/MerriweatherSans-ExtraBold.ttf
-  static/MerriweatherSans-LightItalic.ttf
-  static/MerriweatherSans-Italic.ttf
-  static/MerriweatherSans-MediumItalic.ttf
-  static/MerriweatherSans-SemiBoldItalic.ttf
-  static/MerriweatherSans-BoldItalic.ttf
-  static/MerriweatherSans-ExtraBoldItalic.ttf
+in those cases you can use the static font files for Inter:
+  static/Inter-Thin.ttf
+  static/Inter-ExtraLight.ttf
+  static/Inter-Light.ttf
+  static/Inter-Regular.ttf
+  static/Inter-Medium.ttf
+  static/Inter-SemiBold.ttf
+  static/Inter-Bold.ttf
+  static/Inter-ExtraBold.ttf
+  static/Inter-Black.ttf
 
 Get started
 -----------

@@ -162,7 +162,9 @@ export default class PracticalExperience extends Component {
         <div className='practical-experience'>
           <h2>Practical Experience</h2>
           <div>{experienceItems}</div>
+          
           <form onSubmit={this.submitHandler}>
+          <h3>New Experience</h3>
             <label htmlFor='company'>Company: </label>
             <input name='company' value={companyInput} onChange={this.companyChange}></input>
             <label htmlFor='job-title'>Job Title: </label>

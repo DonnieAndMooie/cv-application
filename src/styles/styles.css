@@ -3,6 +3,16 @@
     src: url('../fonts/MerriweatherSans-Italic-VariableFont_wght.ttf');
 }
 
+@font-face {
+    font-family: "Slabo";
+    src: url("../fonts/Slabo27px-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-VariableFont_slnt\,wght.ttf");
+}
+
 body{
     margin: 0;
 }
@@ -54,11 +64,13 @@ h1{
     height: 100%;
     display: grid;
     grid-template-columns: repeat(1fr, 3);
+    grid-template-rows: 48px 1fr;
+    overflow-y: scroll;
 }
 
 .general-info{
     grid-column: 1;
-    padding: 15px;
+    padding-left: 15px;
 }
 
 .eduction{
@@ -81,12 +93,14 @@ h1{
 
 .entered{
     font-size: 24px;
+    font-family: "Inter";
 }
 
 input, textarea{
     height: 24px;
     border: none;
     background-color: rgba(255, 255, 255, 0.699);
+    font-family: "Inter", sans-serif;
 }
 
 input:focus, textarea:focus{
@@ -99,7 +113,56 @@ form{
 }
 
 .submitted-section{
-    background-color: grey;
+    background-color: rgb(238, 238, 238);
     padding: 10px;
     margin: 20px;
+}
+
+h2{
+    grid-row: 1;
+    font-family: "Slabo", sans-serif;
+}
+
+.general-input,
+.general-info-input-box{
+    margin-bottom: 80px;
+}
+
+.general-info-input-box{
+    height: 48px;
+    font-size: 24px;
+    font-family: "Inter", sans-serif;
+}
+
+h3{
+    font-family: "Slabo", sans-serif;
+    font-style: italic;
+}
+
+button{
+    height: 24px;
+    font-family: "Merriweather", sans-serif;
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 50px;
+}
+
+label{
+    font-family: "Inter";
+}
+
+textarea{
+    height: 80px;
+}
+
+form{
+    background-color:rgba(255, 255, 255, 0.699);
+    margin: 10px;
+}
+
+p{
+    font-family: "Inter", sans-serif
+}
+
+p strong{
+    font-family: "Slabo", sans-serif;
 }

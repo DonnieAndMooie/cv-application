@@ -36,18 +36,18 @@ export default class Input extends Component {
     const { type } = this.props
     if (input === "" && submitted === true){
         return(
-            <p className='not-entered' onClick={this.clickHandler}>{type}</p>
+            <p className='not-entered general-input' onClick={this.clickHandler}>{type}</p>
         )
     }
     else if (submitted === true){
         return(
-            <p className='entered' onClick={this.clickHandler}>{input}</p>
+            <p className='entered general-input' onClick={this.clickHandler}>{input}</p>
         )
     }
     else{
         return(
             <div>
-                <input value={input} onChange={this.onChangeHandler}></input>
+                <input className="general-info-input-box"value={input} onChange={this.onChangeHandler}></input>
                 <button onClick={this.submitHandler}>Submit</button>
             </div>
             
@@ -55,3 +55,5 @@ export default class Input extends Component {
     }
   }
 }
+
+
