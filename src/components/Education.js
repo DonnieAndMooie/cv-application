@@ -21,6 +21,7 @@ export default class Education extends Component {
     this.dateToChange = this.dateToChange.bind(this)
     this.editHandler = this.editHandler.bind(this)
     this.submitEdit = this.submitEdit.bind(this)
+    this.deleteItem = this.deleteItem.bind(this)
   }
 
   clickHandler(){
@@ -97,6 +98,13 @@ export default class Education extends Component {
     })
   }
 
+  deleteItem(e, deletedIndex){
+    e.stopPropagation()
+    this.setState({
+      submittedEducation: this.state.submittedEducation.filter((obj, i) => i !== deletedIndex)
+    })
+  }
+
   render() {
     const { buttonClicked, schoolInput, qualificationInput, dateFromInput, dateToInput, editing } = this.state
     const educationItems = this.state.submittedEducation.map((obj, i) =>
@@ -119,6 +127,7 @@ export default class Education extends Component {
           <p><strong>Qualification: </strong>{obj.qualification}</p>
           <p><strong>From: </strong>{obj.from}</p>
           <p><strong>To: </strong>{obj.to}</p>
+          <button onClick={(e) => this.deleteItem(e, i)}>Delete</button>
         </div>
       )
     if (!buttonClicked){

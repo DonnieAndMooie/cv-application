@@ -113,6 +113,13 @@ export default class PracticalExperience extends Component {
     })
   }
 
+  deleteItem(e, deletedIndex){
+    e.stopPropagation()
+    this.setState({
+      submittedExperiences: this.state.submittedExperiences.filter((obj, i) => i !== deletedIndex)
+    })
+  }
+
   render() {
     const {formOpen, companyInput, jobTitleInput, mainTasksInput, dateFromInput, dateToInput, submittedExperiences, editing} = this.state
     const experienceItems = submittedExperiences.map((obj, i) => 
@@ -137,6 +144,7 @@ export default class PracticalExperience extends Component {
         <p><strong>Main Tasks: </strong>{obj.tasks}</p>
         <p><strong>From: </strong>{obj.from}</p>
         <p><strong>To: </strong>{obj.to}</p>
+        <button onClick={(e) => this.deleteItem(e, i)}>Delete</button>
       </div>
     )
 
