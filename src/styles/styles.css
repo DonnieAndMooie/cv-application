@@ -97,3 +97,9 @@ form{
     display: flex;
     flex-direction: column;
 }
+
+.submitted-section{
+    background-color: grey;
+    padding: 10px;
+    margin: 20px;
+}

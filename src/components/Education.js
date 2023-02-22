@@ -10,7 +10,8 @@ export default class Education extends Component {
       qualificationInput: "",
       dateFromInput: "",
       dateToInput: "",
-      submittedEducation: []
+      submittedEducation: [],
+      editing: null
     }
     this.clickHandler = this.clickHandler.bind(this)
     this.schoolChange = this.schoolChange.bind(this)
@@ -18,6 +19,8 @@ export default class Education extends Component {
     this.submitHandler = this.submitHandler.bind(this)
     this.dateFromChange = this.dateFromChange.bind(this)
     this.dateToChange = this.dateToChange.bind(this)
+    this.editHandler = this.editHandler.bind(this)
+    this.submitEdit = this.submitEdit.bind(this)
   }
 
   clickHandler(){
@@ -66,10 +69,52 @@ export default class Education extends Component {
     })
   }
 
+  editHandler(i, obj){
+    this.setState({
+      editing: i,
+      schoolInput: obj.school,
+      qualificationInput: obj.qualification,
+      dateFromInput: obj.from,
+      dateToInput: obj.to,
+       
+    })
+  }
+
+  submitEdit(edittedIndex){
+    this.setState({
+      editing: null,
+      submittedEducation: this.state.submittedEducation.map((obj, i) => (i === edittedIndex ? {
+        school: this.state.schoolInput,
+        qualification: this.state.qualificationInput,
+        from: this.state.dateFromInput,
+        to: this.state.dateToInput
+      } : obj)),
+      buttonClicked: false,
+      schoolInput: "",
+      qualificationInput: "",
+      dateFromInput: "",
+      dateToInput: "",
+    })
+  }
+
   render() {
-    const { buttonClicked, schoolInput, qualificationInput, dateFromInput, dateToInput } = this.state
-    const educationItems = this.state.submittedEducation.map((obj, i) => 
-        <div key={i}>
+    const { buttonClicked, schoolInput, qualificationInput, dateFromInput, dateToInput, editing } = this.state
+    const educationItems = this.state.submittedEducation.map((obj, i) =>
+        editing === i ? 
+        <form key={i} onSubmit={() => this.submitEdit(i)}>
+            <h3>Edit Education</h3>
+            <label htmlFor='school'>School Name:</label>
+            <input value={schoolInput} name="school" onChange={this.schoolChange}></input>
+            <label htmlFor='qualification'>Qualification:</label>
+            <input value={qualificationInput} name="qualification" onChange={this.qualificationChange}></input>
+            <label htmlFor='date-from'>From:</label>
+            <input type="date" name="date-from" value={dateFromInput} onChange={this.dateFromChange}></input>
+            <label htmlFor='date-to'>To:</label>
+            <input type="date" name="date-to" value={dateToInput} onChange={this.dateToChange}></input>
+            <button type="submit">Submit Changes</button>
+          </form>
+        : 
+        <div key={i} className="submitted-section" onClick={() => this.editHandler(i, obj)}>
           <p><strong>School: </strong>{obj.school}</p>
           <p><strong>Qualification: </strong>{obj.qualification}</p>
           <p><strong>From: </strong>{obj.from}</p>
